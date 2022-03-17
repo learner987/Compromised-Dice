@@ -1,0 +1,19 @@
+#Dice Simulator 03.15.2022
+#In this program, the dice is compromised. Number 6 has 75% of probability to show up and number 1 to 5 have a probability of 5% each.
+
+import random
+
+numbers = [1,2,3,4,5,6]
+
+attempt = 0
+
+while attempt <10:
+    attempt += 1
+    msg = input("Roll the dice by typing - a\n")
+    if msg == "a":
+        number = random.choices(numbers, weights = (5,5,5,5,5,75),k=6)
+        high_prob_num = random.choice(number)
+        print(f"The number is",high_prob_num)
+    if msg == "b":   
+        print("Dice stopped!")
+        break
